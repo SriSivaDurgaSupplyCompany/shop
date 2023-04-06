@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Cedarville+Cursive&family=Cormorant+Garamond:wght@300;400&family=Fira+Sans+Condensed:ital,wght@0,300;1,300&family=Inter:wght@100;200;300;400&family=Lato:wght@300;400&family=Old+Standard+TT&family=Open+Sans:wght@300;400&display=swap");
+
+:root {
+  --fontSize-logo: clamp(1.3rem, 2.5vw + 1rem, 5rem);
+  --fontSize-tagline: clamp(0.8rem, 3vw, 2rem);
+  --fontSize-a-navlinks: clamp(0.7rem, 2vw, 1.3rem);
+  --fontSize-h3: clamp(1.4rem, 3vw + 1rem, 3rem);
+  --fontSize-p: clamp(0.8rem, 2vw, 1.3rem);
+
+  --font-color-navlinks-light: rgb(86, 122, 115);
+  --font-color-navlinks-dark: darkslategrey;
+
+  --btn-padding: 0.5rem 1rem;
+
+  --margin-inline-block: clamp(0.3rem, 2vw, 3rem);
+}
+
+/* SCROLL-BAR */
+::-webkit-scrollbar {
+  width: 0.8em;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(
+    10deg,
+    rgb(251, 67, 3),
+    rgb(135, 188, 101),
+    rgb(208, 48, 38)
+  );
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(30deg, rgb(1, 59, 1), white, orangered);
+  border-radius: 100vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  color-scheme: dark light;
+  scroll-behavior: smooth;
+}
+body {
+  background: linear-gradient(85deg, azure, 45%, lightpink, rgb(218, 128, 95));
+}
+
+main {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+section,
+footer {
+  margin: var(--margin-inline-block);
+  box-shadow: 0 0 5px black;
+}
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+h2,
+h3 {
+  font-size: var(--fontSize-h3);
+  font-family: "Cormorant Garamond", serif, cursive;
+  text-transform: capitalize;
+  padding-bottom: 0.7rem;
+  font-style: italic;
+}
+a {
+  color: inherit;
+}
+a,
+p {
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+}
+p {
+  font-size: var(--fontSize-p);
+}
+
+p a {
+  text-decoration: underline;
+  transition: all 0.4s linear;
+}
+p a:hover {
+  color: #252525;
+}
+.contactus-btn {
+  padding: var(--btn-padding);
+  background: rgb(179, 24, 22);
+  border: none;
+  border-radius: 4px;
+}
+.contactus-btn a {
+  color: #ede1da;
+  font-family: "Lato", sans-serif;
+  font-size: var(--fontSize-p);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.text-content {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+.text-content p {
+  margin-bottom: 0.7rem;
+}
+
+/* ===hidden-elements=== */
+.small-scr {
+  display: none;
+}
+
+/* utility class */
+/* flex-align-center */
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+/* ===Header=== */
+.main-header {
+  color: var(--font-color-navlinks-dark);
+  border-bottom: 1px solid var(--font-color-navlinks-light);
+}
+.contact-info {
+  gap: 1.2rem;
+  justify-content: flex-end;
+
+  border-bottom: 1px solid var(--font-color-navlinks-light);
+  padding-inline: 0.5rem 1rem;
+}
+.contact-info a,
+.contact-info p,
+i {
+  font-size: var(--fontSize-a-navlinks);
+  font-weight: 600;
+}
+
+.nav-links {
+  margin-inline: 3rem;
+  padding: 0.4rem 1rem;
+
+  justify-content: space-evenly;
+}
+.nav-links a {
+  text-transform: uppercase;
+
+  font-weight: 600;
+  font-size: var(--fontSize-a-navlinks);
+
+  color: var(--font-color-navlinks-light);
+  letter-spacing: 0.9px;
+
+  transition: all 0.3s ease-in;
+}
+.nav-links a:hover {
+  color: var(--font-color-navlinks-dark);
+}
+.nav-links a::after,
+.contact-info a::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 1.3px;
+  background: var(--font-color-navlinks-light);
+
+  transition: all 0.4s ease-in;
+}
+.contact-info a::after {
+  width: 0%;
+}
+.nav-links a:hover:after,
+.contact-info a:hover:after {
+  background: var(--font-color-navlinks-dark);
+  width: 100%;
+}
+
+.logo-container {
+  padding-inline: 0.4rem;
+
+  flex-direction: column;
+  gap: 0.4rem;
+
+  text-align: center;
+}
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: var(--fontSize-logo);
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+.tag-line {
+  font-size: var(--fontSize-tagline);
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+
+  color: var(--font-color-navlinks-light);
+}
+
+/* ===Function-1=== */
+.function-1 {
+  background: linear-gradient(
+    135deg,
+    rgb(242, 137, 193),
+    rgb(251, 178, 123),
+    rgb(251, 178, 123),
+    rgb(64, 194, 88)
+  );
+
+  color: var(--font-color-navlinks-light);
+  gap: 1rem;
+
+  min-height: 50vh;
+}
+.funtion-1-content {
+  flex: 0 0 40%;
+}
+.funtion-1-content h3 {
+  font-style: italic;
+}
+
+/* ===About US=== */
+.about-us {
+  background: linear-gradient(
+    45deg,
+    rgb(64, 194, 88),
+    rgb(251, 178, 123),
+    rgb(245, 46, 49)
+  );
+}
+
+.about-us p {
+  color: rgb(238, 247, 247);
+}
+.images img {
+  margin-inline: auto;
+}
+
+/* ==Collection== */
+.collection {
+  background: linear-gradient(
+    80deg,
+    rgb(234, 170, 32),
+    40%,
+    rgb(206, 38, 38),
+    orangered
+  );
+}
+.grid-wrapper {
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  grid-auto-flow: dense;
+
+  margin-top: 1rem;
+}
+
+.grid-wrapper > div > img {
+  border-radius: 5px;
+  width: 100%;
+  aspect-ratio: 3.5/3;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+
+  box-shadow: 0 0 10px azure;
+}
+.grid-wrapper > div > img:hover {
+  transform: scale(1.2);
+}
+
+/* ===FOOTER=== */
+.footer-content {
+  background: linear-gradient(
+    45deg,
+    rgb(180, 56, 82),
+    rgb(211, 207, 224),
+    rgb(170, 161, 146)
+  );
+}
+
+/* ====Responsive Design==== */
+@media (max-width: 1080px) {
+  .function-1 {
+    flex-direction: column-reverse;
+    gap: 0rem;
+  }
+  .funtion-1-content {
+    flex: 0 0 100%;
+    padding: 1rem;
+  }
+  .nav-links {
+    margin-inline: 1rem;
+    justify-content: space-between;
+  }
+  .grid-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 670px) {
+  .large-scr {
+    display: none;
+  }
+  .small-scr {
+    display: block;
+  }
+  span {
+    display: none;
+  }
+}
+
+@media (max-width: 486px) {
+  .nav-links,
+  .contact-info {
+    margin-inline: 0rem;
+    padding-inline: 0.3rem;
+    padding-block: 0.2rem 0.3rem;
+  }
+  .contactus-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .text-content {
+    padding: 0.2rem;
+  }
+  .grid-wrapper > div > img {
+    aspect-ratio: 0.8/ 0.8;
+    object-fit: fill;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-links a::after,
+  .contact-info a::after {
+    width: 100%;
+  }
+}
